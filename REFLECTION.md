@@ -7,12 +7,15 @@
 ## Challenges Faced
 
 ### Understanding Version Control
+
 The most significant challenge I encountered was grasping the concept of version control with Git. Initially, understanding the difference between staging, committing, and pushing changes felt confusing. The idea of branches and how they allow parallel development without affecting the main codebase took time to internalize. Merge conflicts were particularly intimidating at first, but after working through several examples, I learned that they're a normal part of collaborative development and can be resolved systematically.
 
 ### Setting Up the CI Pipeline
+
 Configuring GitHub Actions for the first time presented its own challenges. Understanding the YAML syntax and how to structure workflow files required careful attention to detail. I had to learn about different pipeline stages, how to set up matrix testing for multiple Node.js versions, and how to properly configure the testing environment. Debugging failed builds taught me the importance of reading error logs carefully and checking configuration files for syntax errors.
 
 ### Writing Effective Tests
+
 Writing comprehensive unit tests was more complex than expected. I needed to think about edge cases, error conditions, and various input combinations. Learning to use Jest's testing framework and understanding concepts like test suites, assertions, and matchers required practice. The challenge was not just making tests pass, but writing tests that actually verify the code works correctly in all scenarios.
 
 ---

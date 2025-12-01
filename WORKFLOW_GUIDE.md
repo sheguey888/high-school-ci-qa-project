@@ -11,6 +11,7 @@ This guide documents all the version control, continuous integration, and qualit
 ### 1.1 Repository Initialization
 
 **Commands Used:**
+
 ```bash
 git init
 git remote add origin https://github.com/sheguey888/high-school-ci-qa-project.git
@@ -21,6 +22,7 @@ git remote add origin https://github.com/sheguey888/high-school-ci-qa-project.gi
 ### 1.2 Staging and Committing Changes
 
 **Commands Used:**
+
 ```bash
 git add .
 git commit -m "Initial commit: Project setup with calculator app, tests, CI, and QA documentation"
@@ -31,6 +33,7 @@ git commit -m "Initial commit: Project setup with calculator app, tests, CI, and
 ### 1.3 Pushing to Remote Repository
 
 **Command Used:**
+
 ```bash
 git push -u origin main
 ```
@@ -40,7 +43,9 @@ git push -u origin main
 ### 1.4 Branch Management
 
 #### Creating a Feature Branch
+
 **Command Used:**
+
 ```bash
 git checkout -b feature/add-modulo-operation
 ```
@@ -48,6 +53,7 @@ git checkout -b feature/add-modulo-operation
 **Purpose:** Create an isolated environment for developing new features without affecting the main codebase.
 
 #### Branches Created in This Project:
+
 - `main` - Production-ready code
 - `develop` - Integration branch for features
 - `feature/add-modulo-operation` - Feature branch for modulo functionality
@@ -55,6 +61,7 @@ git checkout -b feature/add-modulo-operation
 ### 1.5 Pull Request Workflow
 
 **Steps Demonstrated:**
+
 1. Create feature branch from main
 2. Implement new feature (modulo operation)
 3. Write unit tests for the feature
@@ -66,12 +73,14 @@ git checkout -b feature/add-modulo-operation
 9. Merge after approval
 
 **Pull Request Created:**
+
 - PR #1: "feat: Add modulo operation to calculator"
 - URL: https://github.com/sheguey888/high-school-ci-qa-project/pull/1
 
 ### 1.6 Collaboration Practices
 
 **Demonstrated Workflows:**
+
 - Feature branch isolation
 - Descriptive commit messages using conventional commits format
 - Pull request templates with detailed descriptions
@@ -86,15 +95,18 @@ git checkout -b feature/add-modulo-operation
 **File:** `.github/workflows/ci.yml`
 
 **Pipeline Triggers:**
+
 - Push to `main`, `develop`, or `feature/*` branches
 - Pull requests to `main` or `develop` branches
 
 ### 2.2 CI Pipeline Stages
 
 #### Stage 1: Test and Lint
+
 **Purpose:** Run automated tests and code quality checks
 
 **Steps:**
+
 1. Checkout code from repository
 2. Setup Node.js (versions 16.x and 18.x)
 3. Install dependencies with `npm ci`
@@ -103,22 +115,27 @@ git checkout -b feature/add-modulo-operation
 6. Generate test coverage report
 
 **Matrix Testing:**
+
 - Tests run on multiple Node.js versions simultaneously
 - Ensures compatibility across different environments
 
 #### Stage 2: Build Check
+
 **Purpose:** Verify project integrity
 
 **Steps:**
+
 1. Checkout code
 2. Setup Node.js
 3. Install dependencies
 4. Verify project structure (src/, tests/, package.json)
 
 #### Stage 3: Notification
+
 **Purpose:** Report build status
 
 **Steps:**
+
 1. Check results from previous stages
 2. Display success or failure message
 3. Fail pipeline if any stage fails
@@ -126,6 +143,7 @@ git checkout -b feature/add-modulo-operation
 ### 2.3 Benefits of CI
 
 **Observed Advantages:**
+
 - ✅ Immediate feedback on code changes
 - ✅ Prevents broken code from being merged
 - ✅ Automates repetitive testing tasks
@@ -146,6 +164,7 @@ The repository shows build status in real-time, providing instant visibility int
 **Framework:** Jest
 
 **Test Files:**
+
 - `tests/calculator.test.js` - 30 tests for calculator functions
 - `tests/validator.test.js` - 18 tests for validation utilities
 
@@ -156,6 +175,7 @@ The repository shows build status in real-time, providing instant visibility int
 ### 3.2 Test Organization
 
 **Structure:**
+
 ```javascript
 describe('Module Name', () => {
   describe('functionName()', () => {
@@ -167,6 +187,7 @@ describe('Module Name', () => {
 ```
 
 **Test Categories:**
+
 1. **Normal Cases:** Standard inputs and expected outputs
 2. **Edge Cases:** Zero, negative numbers, decimals
 3. **Error Cases:** Invalid inputs, exceptions
@@ -175,12 +196,14 @@ describe('Module Name', () => {
 ### 3.3 Code Coverage Report
 
 **Metrics Achieved:**
+
 - Statements: 100%
 - Branches: 100%
 - Functions: 100%
 - Lines: 100%
 
 **How to Generate:**
+
 ```bash
 npm test -- --coverage
 ```
@@ -192,6 +215,7 @@ npm test -- --coverage
 **Configuration File:** `.eslintrc.json`
 
 **Enforced Rules:**
+
 - 2-space indentation
 - Single quotes for strings
 - Semicolons required
@@ -201,6 +225,7 @@ npm test -- --coverage
 - Unix line endings
 
 **How to Run:**
+
 ```bash
 npm run lint          # Check for issues
 npm run lint:fix      # Auto-fix issues
@@ -209,6 +234,7 @@ npm run lint:fix      # Auto-fix issues
 ### 3.5 Code Review Process
 
 **Review Checklist:**
+
 - [ ] Code is clear and readable
 - [ ] All tests pass
 - [ ] New tests added for new features
@@ -219,6 +245,7 @@ npm run lint:fix      # Auto-fix issues
 - [ ] Edge cases considered
 
 **Review Guidelines:**
+
 1. Be constructive and respectful
 2. Focus on code, not the person
 3. Explain the "why" behind suggestions
@@ -255,6 +282,7 @@ high-school-ci-qa-project/
 ## Part 5: Common Git Commands Reference
 
 ### Basic Commands
+
 ```bash
 # Check status
 git status
@@ -270,6 +298,7 @@ git restore <file>
 ```
 
 ### Branching Commands
+
 ```bash
 # List branches
 git branch
@@ -288,6 +317,7 @@ git branch -d <branch-name>
 ```
 
 ### Collaboration Commands
+
 ```bash
 # Fetch changes
 git fetch origin
@@ -303,6 +333,7 @@ git remote -v
 ```
 
 ### Merge Commands
+
 ```bash
 # Merge branch into current
 git merge <branch-name>
@@ -316,26 +347,31 @@ git merge --abort
 ## Part 6: Testing Commands
 
 ### Run All Tests
+
 ```bash
 npm test
 ```
 
 ### Run Specific Test File
+
 ```bash
 npm test calculator.test.js
 ```
 
 ### Run Tests in Watch Mode
+
 ```bash
 npm test -- --watch
 ```
 
 ### Generate Coverage Report
+
 ```bash
 npm test -- --coverage
 ```
 
 ### Run Tests with Verbose Output
+
 ```bash
 npm test -- --verbose
 ```
@@ -345,34 +381,38 @@ npm test -- --verbose
 ## Part 7: Best Practices Demonstrated
 
 ### Git Best Practices
+
 ✅ Descriptive commit messages  
 ✅ Atomic commits (one logical change per commit)  
 ✅ Feature branches for new development  
 ✅ Regular pushes to remote  
 ✅ Pull requests for code review  
-✅ Never commit directly to main  
+✅ Never commit directly to main
 
 ### CI Best Practices
+
 ✅ Automated testing on every push  
 ✅ Multiple environment testing (matrix)  
 ✅ Fast feedback loops  
 ✅ Clear pipeline stages  
 ✅ Meaningful job names  
-✅ Status notifications  
+✅ Status notifications
 
 ### QA Best Practices
+
 ✅ Write tests before merging  
 ✅ Test edge cases and error conditions  
 ✅ Maintain high code coverage  
 ✅ Consistent code style  
 ✅ Regular code reviews  
-✅ Document all functions  
+✅ Document all functions
 
 ---
 
 ## Part 8: Learning Outcomes
 
 ### Skills Developed
+
 1. **Version Control:** Managing code with Git and GitHub
 2. **Collaboration:** Working with branches and pull requests
 3. **Automation:** Setting up CI pipelines
@@ -381,6 +421,7 @@ npm test -- --verbose
 6. **Documentation:** Creating clear project documentation
 
 ### Real-World Applications
+
 - Working in software development teams
 - Contributing to open-source projects
 - Managing personal projects professionally
@@ -394,7 +435,8 @@ npm test -- --verbose
 ### Common Issues and Solutions
 
 **Problem:** Tests failing locally  
-**Solution:** 
+**Solution:**
+
 ```bash
 rm -rf node_modules package-lock.json
 npm install
@@ -403,6 +445,7 @@ npm test
 
 **Problem:** Merge conflicts  
 **Solution:**
+
 ```bash
 git status  # See conflicted files
 # Edit files to resolve conflicts
@@ -412,6 +455,7 @@ git commit -m "Resolve merge conflicts"
 
 **Problem:** Forgot to create branch  
 **Solution:**
+
 ```bash
 git stash
 git checkout -b feature/my-feature
@@ -420,6 +464,7 @@ git stash pop
 
 **Problem:** Need to undo last commit  
 **Solution:**
+
 ```bash
 git reset --soft HEAD~1  # Keep changes
 # or
@@ -431,6 +476,7 @@ git reset --hard HEAD~1  # Discard changes
 ## Part 10: Next Steps
 
 ### Recommended Improvements
+
 1. Add integration tests
 2. Implement code coverage badges
 3. Set up automated releases
@@ -441,6 +487,7 @@ git reset --hard HEAD~1  # Discard changes
 8. Add performance benchmarks
 
 ### Further Learning Resources
+
 - Git Documentation: https://git-scm.com/doc
 - GitHub Actions: https://docs.github.com/actions
 - Jest Testing: https://jestjs.io/docs/getting-started

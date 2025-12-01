@@ -1,12 +1,15 @@
 # High School CI/QA Learning Project
 
 ## 🔗 GitHub Repository
+
 **URL:** https://github.com/sheguey888/high-school-ci-qa-project
 
 ## Overview
+
 This project demonstrates version control with Git, continuous integration with GitHub Actions, and quality assurance practices for high school students.
 
 ## Project Structure
+
 ```
 ├── src/
 │   ├── calculator.js       # Main calculator functions
@@ -23,6 +26,7 @@ This project demonstrates version control with Git, continuous integration with 
 ```
 
 ## Features
+
 - **Calculator**: Basic arithmetic operations (add, subtract, multiply, divide)
 - **Validator**: Input validation for calculator operations
 - **Unit Tests**: Comprehensive test coverage using Jest
@@ -32,11 +36,13 @@ This project demonstrates version control with Git, continuous integration with 
 ## Setup Instructions
 
 ### Prerequisites
+
 - Node.js (v14 or higher)
 - Git
 - GitHub account
 
 ### Installation
+
 ```bash
 # Clone the repository
 git clone <repository-url>
@@ -49,16 +55,19 @@ npm install
 ## Usage
 
 ### Running Tests
+
 ```bash
 npm test
 ```
 
 ### Running Linter
+
 ```bash
 npm run lint
 ```
 
 ### Fixing Lint Issues
+
 ```bash
 npm run lint:fix
 ```
@@ -66,29 +75,34 @@ npm run lint:fix
 ## Git Workflow Demonstrated
 
 ### 1. Version Control
+
 - Initial repository setup
 - Staging and committing changes
 - Pushing to remote repository
 - Branching strategy
 
 ### 2. Collaboration
+
 - Creating feature branches
 - Merging branches
 - Resolving merge conflicts
 - Pull request workflow
 
 ### 3. Continuous Integration
+
 - Automated testing on push
 - Build verification
 - Code quality checks
 
 ## Learning Objectives
+
 ✅ Understand version control with Git  
 ✅ Practice branching and merging  
 ✅ Set up automated CI pipelines  
 ✅ Write and run unit tests  
 ✅ Use linters for code quality  
-✅ Conduct code reviews via pull requests  
+✅ Conduct code reviews via pull requests
 
 ## License
+
 MIT License

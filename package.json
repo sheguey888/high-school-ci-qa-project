@@ -1,0 +1,23 @@
+{
+  "name": "high-school-students-ci-qa-project",
+  "version": "1.0.0",
+  "description": "A project to learn Git, CI, and QA practices",
+  "main": "src/calculator.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src/**/*.js tests/**/*.js",
+    "lint:fix": "eslint src/**/*.js tests/**/*.js --fix"
+  },
+  "keywords": [
+    "education",
+    "git",
+    "ci",
+    "qa"
+  ],
+  "author": "High School Student",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "jest": "^29.7.0"
+  }
+}

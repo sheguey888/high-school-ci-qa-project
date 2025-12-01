@@ -124,4 +124,26 @@ describe('Calculator Module', () => {
       expect(() => calculator.squareRoot(-4)).toThrow('Cannot calculate square root of negative number');
     });
   });
+
+  describe('modulo()', () => {
+    test('should calculate modulo of positive numbers', () => {
+      expect(calculator.modulo(10, 3)).toBe(1);
+    });
+
+    test('should calculate modulo with negative dividend', () => {
+      expect(calculator.modulo(-10, 3)).toBe(-1);
+    });
+
+    test('should return zero when dividend is divisible', () => {
+      expect(calculator.modulo(10, 5)).toBe(0);
+    });
+
+    test('should handle decimal numbers', () => {
+      expect(calculator.modulo(7.5, 2)).toBeCloseTo(1.5);
+    });
+
+    test('should throw error for zero divisor', () => {
+      expect(() => calculator.modulo(5, 0)).toThrow('Cannot calculate modulo with zero divisor');
+    });
+  });
 });

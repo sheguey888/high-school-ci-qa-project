@@ -70,11 +70,26 @@ function squareRoot(num) {
   return Math.sqrt(num);
 }
 
+/**
+ * Calculates the modulo (remainder) of division
+ * @param {number} a - Dividend
+ * @param {number} b - Divisor
+ * @returns {number} Remainder of a divided by b
+ * @throws {Error} If divisor is zero
+ */
+function modulo(a, b) {
+  if (b === 0) {
+    throw new Error('Cannot calculate modulo with zero divisor');
+  }
+  return a % b;
+}
+
 module.exports = {
   add,
   subtract,
   multiply,
   divide,
   power,
-  squareRoot
+  squareRoot,
+  modulo
 };

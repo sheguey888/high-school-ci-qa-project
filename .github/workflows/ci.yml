@@ -2,9 +2,9 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ main, develop, feature/* ]
+    branches: [main, develop, feature/*]
   pull_request:
-    branches: [ main, develop ]
+    branches: [main, develop]
 
 jobs:
   test-and-lint:
@@ -16,26 +16,25 @@ jobs:
         node-version: [16.x, 18.x]
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Setup Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Install dependencies
-      run: npm ci
+      - name: Install dependencies
+        run: npm install
 
-    - name: Run ESLint
-      run: npm run lint
+      - name: Run ESLint
+        run: npm run lint
 
-    - name: Run tests
-      run: npm test
+      - name: Run tests
+        run: npm test
 
-    - name: Generate test coverage
-      run: npm test -- --coverage
+      - name: Generate test coverage
+        run: npm test -- --coverage
 
   build:
     name: Build Check
@@ -43,24 +42,24 @@ jobs:
     needs: test-and-lint
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18.x'
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
 
-    - name: Install dependencies
-      run: npm ci
+      - name: Install dependencies
+        run: npm install
 
-    - name: Verify project structure
-      run: |
-        echo "Checking project structure..."
-        test -d src || exit 1
-        test -d tests || exit 1
-        test -f package.json || exit 1
-        echo "✓ Project structure verified"
+      - name: Verify project structure
+        run: |
+          echo "Checking project structure..."
+          test -d src || exit 1
+          test -d tests || exit 1
+          test -f package.json || exit 1
+          echo "✓ Project structure verified"
 
   notify:
     name: Build Status Notification
@@ -69,11 +68,11 @@ jobs:
     if: always()
 
     steps:
-    - name: Check build status
-      run: |
-        if [ "${{ needs.test-and-lint.result }}" == "success" ] && [ "${{ needs.build.result }}" == "success" ]; then
-          echo "✓ All checks passed! Build is successful."
-        else
-          echo "✗ Build failed. Please check the logs above."
-          exit 1
-        fi
+      - name: Check build status
+        run: |
+          if [ "${{ needs.test-and-lint.result }}" == "success" ] && [ "${{ needs.build.result }}" == "success" ]; then
+            echo "✓ All checks passed! Build is successful."
+          else
+            echo "✗ Build failed. Please check the logs above."
+            exit 1
+          fi

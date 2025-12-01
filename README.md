@@ -1,5 +1,8 @@
 # High School CI/QA Learning Project
 
+## 🔗 GitHub Repository
+**URL:** https://github.com/sheguey888/high-school-ci-qa-project
+
 ## Overview
 This project demonstrates version control with Git, continuous integration with GitHub Actions, and quality assurance practices for high school students.
 

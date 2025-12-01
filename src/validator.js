@@ -9,7 +9,7 @@
  * @returns {boolean} True if value is a number
  */
 function isNumber(value) {
-  return typeof value === "number" && !isNaN(value) && isFinite(value);
+  return typeof value === 'number' && !isNaN(value) && isFinite(value);
 }
 
 /**
@@ -50,18 +50,18 @@ function validateDivision(numerator, denominator) {
   if (!areValidNumbers(numerator, denominator)) {
     return {
       valid: false,
-      error: "Both values must be valid numbers",
+      error: 'Both values must be valid numbers'
     };
   }
   if (denominator === 0) {
     return {
       valid: false,
-      error: "Denominator cannot be zero",
+      error: 'Denominator cannot be zero'
     };
   }
   return {
     valid: true,
-    error: null,
+    error: null
   };
 }
 
@@ -70,5 +70,5 @@ module.exports = {
   areValidNumbers,
   isPositive,
   isNonNegative,
-  validateDivision,
+  validateDivision
 };
